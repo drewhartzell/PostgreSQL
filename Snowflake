@@ -8,8 +8,6 @@ JOIN SALES
 GROUP BY SHIP_STATE
 ORDER BY SUM(NET_AMOUNT) DESC
 
------------------------------------------------------------------------------------
-
 SELECT
   YEAR(ORDER_DATE),
   SUM(GROSS_AMOUNT),
@@ -29,7 +27,8 @@ FROM DRUG_UTIL
 GROUP BY PRODUCT_NAME
 ORDER BY COUNT(*) DESC
 
--------------------------------------------------------------------------------------------
+//
+//
 
 SELECT 
     PRODUCT_NAME,
@@ -39,3 +38,27 @@ SELECT
 FROM DRUG_UTIL
 GROUP BY PRODUCT_NAME
 ORDER BY SUM(total_amount_reimbursed) DESC
+
+//
+//
+
+SELECT 
+    YEAR,
+    SUM(total_amount_reimbursed),
+    SUM(number_of_prescriptions)
+FROM DRUG_UTIL
+GROUP BY YEAR
+ORDER BY SUM(total_amount_reimbursed) DESC
+
+//
+//
+
+SELECT 
+    PRODUCT_NAME,
+    SUM(total_amount_reimbursed),
+    SUM(MEDICAID_AMOUNT_REIMBURSED),
+    SUM(number_of_prescriptions)
+FROM DRUG_UTIL
+GROUP BY PRODUCT_NAME
+ORDER BY SUM(total_amount_reimbursed) DESC
+LIMIT 10
