@@ -1,3 +1,5 @@
+# Etsy Database #
+
 SELECT
     SHIP_STATE,
     SUM(GROSS_AMOUNT),
@@ -19,6 +21,8 @@ GROUP BY YEAR(ORDER_DATE)
 ORDER BY YEAR(ORDER_DATE) DESC
 
 ----------------------------------------------------------------------------------------
+
+# Medicaid Database #
 
 SELECT 
     PRODUCT_NAME,
